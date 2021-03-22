@@ -2,7 +2,7 @@ const Discord = require('discord.js'),
     client = new Discord.Client({
         fetchAllMembers: true
     }),
-    
+    bot.login(process.env.BOT_TOKEN)
     fs = require('fs')
  
 client.login(config.token)
