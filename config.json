@@ -1,4 +1,4 @@
 {
-    "token": "ODIzMTg4NjIzMTU0ODcyMzMx.YFdMJQ.n6pAKElx6A9s_dUgXZTHGIsIjl8",
+    "token": process.env.BOT_TOKEN,
     "prefix": "!"
 }
