@@ -1,26 +1,15 @@
-const Discord = require("discord.js");
+const Discord = require('discord.js')
+const bot = new Discord.Client()
 
-const Client = new Discord.Client;
-
-const prefix = "!";
-
-Client.on("ready", () => {
-    console.log("bot opérationnel")
+bot.on('ready', function () {
+    console.log("Je suis connecté !")
     bot.user.setActivity('Undertale', { type: "PLAYING" });
-});
+}) 
 
-Client.on("message", message => {
-    if(message.author.bot) return; 
-    
-    
-    if(message.content == prefix + "ping"){
-        message.channel.send("pong");
-    }    
+bot.on('message', message => {
+  if (message.content === 'ping') {
+    message.reply('pong !')
+  }
+})
 
-    if(message.content == prefix + "stat"){
-        message.channel.send(message.author.username + " qui a pour indentifiant : " + message.author.id + " a posté un message");
-    }        
-});   
-
-
-Client.login(process.env.BOT_TOKEN)
+bot.login(process.env.BOT_TOKEN)
