@@ -6,7 +6,6 @@ const prefix = "!";
 
 Client.on("ready", () => {
     console.log("bot opérationnel");
-     bot.user.setActivity('Undertale', { type: "PLAYING" });
 });
 
 Client.on("message", message => {
