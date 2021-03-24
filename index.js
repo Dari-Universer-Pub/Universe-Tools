@@ -3,7 +3,7 @@ const bot = new Discord.Client()
 
 bot.on('ready', function () {
     console.log("Je suis connecté !")
-    bot.user.setActivity('Undertale', { type: "STREAMING" });
+    bot.user.setActivity('Undertale', { type: "PLAYING" });
 }) 
 
 bot.on('message', message => {
