@@ -5,8 +5,7 @@ const Client = new Discord.Client;
 const prefix = "!";
 
 Client.on("ready", () => {
-    console.log("bot opérationnel")
-    bot.user.setActivity('Undertale', { type: "PLAYING" });
+    console.log("bot opérationnel");
 });
 
 Client.on("message", message => {
