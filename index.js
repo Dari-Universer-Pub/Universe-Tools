@@ -21,8 +21,9 @@ Client.on("guildMemberRemove", member => {
 Client.on("message", message => {
     if(message.author.bot) return; 
     if(message.channel.type == "dm") return;
-
-
+    
+    message.react("🙌");
+    
     if(message.content == prefix + "ping"){
         message.channel.send("pong");
     }
