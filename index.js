@@ -10,6 +10,7 @@ Client.on("ready", () => {
 
 Client.on("guildMemberAdd", member => {
     console.log("Un nouveau membre est arrivé");
+    member.guild.channels.cache.find(channel => channel.id === "804006373783502949")
 });
 
 Client.on("guildMemberRemove", member => {
@@ -18,6 +19,7 @@ Client.on("guildMemberRemove", member => {
 
 Client.on("message", message => {
     if(message.author.bot) return; 
+    if(message.channel.type == "dm") return;
 
 
     if(message.content == prefix + "ping"){
