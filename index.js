@@ -30,4 +30,4 @@ Client.on("message", message => {
 });
 
 
-Client.login(process.en.BOT_TOKEN)
+Client.login(process.env.BOT_TOKEN)
