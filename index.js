@@ -10,7 +10,7 @@ Client.on("ready", () => {
 
 Client.on("guildMemberAdd", member => {
     console.log("Un nouveau membre est arrivé");
-    member.guild.channels.cache.find(channel => channel.id === "804006373783502949")
+    member.guild.channels.cache.find(channel => channel.id === "804006373783502949").send(member.displayName + "est arrivé !");
 });
 
 Client.on("guildMemberRemove", member => {
