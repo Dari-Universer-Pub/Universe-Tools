@@ -18,11 +18,20 @@ Client.on("guildMemberRemove", member => {
     member.guild.channels.cache.find(channel => channel.id === "815600325024284672").send(member.displayName + "nous a quitté !");
 });
 
+Client.on("messageReactionAdd", (reaction, user) => {
+    console.log("reaction ajouté");
+});
+
+Client.on("messageReactionRemove", (reaction, user) => {
+    console.log("reaction retiré");
+});  
+    
 Client.on("message", message => {
     if(message.author.bot) return; 
     if(message.channel.type == "dm") return;
     
     message.react("🙌");
+    message.react("820991309753876511")
     
     if(message.content == prefix + "ping"){
         message.channel.send("pong");
