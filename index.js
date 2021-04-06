@@ -29,8 +29,24 @@ Client.on("message", message => {
                  }
              }
          }
-     }
-});
+         else if(message.content.startsWith(prefix + "kick")){
+             let mention = message.mentions.members.first();
+             
+             if(mention = undefined){
+                 message.reply("Membre non ou mal mentionné.");
+             } 
+             else {
+                 if(mention.kickable){
+                     mention.kick();
+                     message.channel.send(mention.displayName + " a été kick avec succès.");
+                 }   
+                 else {
+                     message.reply("Impossible de kick ce membre.");
+                 } 
+             } 
+         }  
+     }  
+}); 
 
             
     
