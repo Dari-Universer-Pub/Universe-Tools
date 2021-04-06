@@ -22,7 +22,7 @@ Client.on("message", message => {
              else {
                  if(mention.bannable){
                      mention.ban();
-                     message.channel.send(mention.displayName + "a été banni avec succès");
+                     message.channel.send(mention.displayName + " a été banni avec succès");
                  }
                  else {
                      message.reply("Impossible de bannir ce membre.");
