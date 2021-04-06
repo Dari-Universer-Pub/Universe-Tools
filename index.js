@@ -10,16 +10,30 @@ Client.on("ready", () => {
 
 Client.on("message", message => {
     if(message.author.bot) return; 
-
-
-    if(message.content == prefix + "ping"){
-        message.channel.send("pong");
-    }
-
-    if(message.content == prefix + "stat"){
-        message.channel.send(message.author.username + " qui a pour indentifiant : " + message.author.id + " a posté un message");
-    }
+    if(message.channel.type == "dm") return;
+    
+    if(message.member.hasPermission("ADMINISTRATOR")){
+        if(message.content.startsWith(prefix + "ban")){
+            let mention = message.mentions.members.first();
+        
+             if(mention == undefined){
+                 message.reply("Membre non ou mal mentionné.");
+             }
+             else {
+                 if(mention.bannable){
+                     mention.ban();
+                     message.channel.send(mention.displayName + "a été banni avec succès");
+                 }
+                 else {
+                     message.reply("Impossible de bannir ce membre.");
+                 }
+             }
+         }
+     }
 });
+
+            
+    
 
 
 Client.login(process.env.BOT_TOKEN)
