@@ -8,14 +8,6 @@ Client.on("ready", () => {
     console.log("bot opérationnel");
 });
 
-Client.on("guildMemberAdd", member => {
-    console.log("Un nouveau membre est arrivé");
-});
-
-Client.on("guildMemberRemove", member => {
-    console.log("Un nouveau membre nous a quitté");
-});
-
 Client.on("message", message => {
     if(message.author.bot) return; 
 
